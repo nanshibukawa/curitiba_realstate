@@ -172,10 +172,6 @@ Baseado nas métricas de erro (MSE, MAPE e RMSPE), o modelo que apresentou os me
 - Explorar redes neurais para realizar a predição.
 - Melhorar a manipulação de outliers no conjunto de dados.
 
-## Contato
-
-Para mais informações, entre em contato: shibukawa@alunos.utfpr.edu.br
-
 ## Próximos Passos
 - Testar mais técnicas de regularização para evitar overfitting.
 - Explorar redes neurais para realizar a predição.
@@ -183,5 +179,4 @@ Para mais informações, entre em contato: shibukawa@alunos.utfpr.edu.br
 
 ## Contato
 
-Para mais informações, entre em contato: seu-email@dominio.com
-
+Para mais informações, entre em contato: shibukawa@alunos.utfpr.edu.br
