@@ -144,7 +144,7 @@ Para avaliar o desempenho dos modelos de regressão, utilizamos diversas métric
 
 ## Visualização dos Resultados
 
-[Aqui você pode adicionar gráficos e visualizações dos resultados dos modelos para uma análise mais visual]
+Em construção
 
 ### Análise dos Resultados
 
