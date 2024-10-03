@@ -127,20 +127,24 @@ Para avaliar o desempenho dos modelos de regressão, utilizamos diversas métric
 
 | Modelo                    | R²   | MSE                 | MAE                   | MAPE   | RMSPE |
 |---------------------------|------|---------------------|-----------------------|--------|-------|
-| Ridge Regression          | 0.792 | 12,669,986,389.93   | 86,608.95             | 0.211  | 0.091 |
-| Polynomial Regression     | 0.806 | 11,536,512,920.42   | 81,908.46             | 0.202  | 0.086 |
-| Multi Linear Regression   | 0.792 | 12,670,333,734.46   | 86,607.93             | 0.211  | 0.091 |
-| Decision Tree             | 0.721 | 21,720,147,637.76   | 104,144.21            | 0.253  | 0.070 |
-| CatBoost Regressor        | 0.853 | 9,186,180,086.49    | 71,517.73             | 0.175  | 0.069 |
-| XGBoost Regressor         | 0.847 | 9,529,034,273.81    | 73,203.43             | 0.183  | 0.071 |
+| Ridge Regression           | 0.761 | 14,548,515,721.72   | 95,959.10             | 0.227  | 0.077 |
+| Polynomial Regression      | 0.766 | 14,246,342,540.56   | 92,722.98             | 0.214  | 0.059 |
+| Multi Linear Regression    | 0.766 | 14,267,190,898.42   | 92,872.71             | 0.214  | 0.060 |
+| Decision Tree              | 0.732 | 16,372,773,983.58   | 90,171.15             | 0.224  | 0.061 |
+| CatBoost Regressor         | 0.861 | 8,471,992,036.09    | 67,306.37             | 0.160  | 0.042 |
+| XGBoost Regressor          | 0.847 | 9,529,034,273.81    | 73,203.43             | 0.183  | 0.071 |
+
 
 ### Com Amenities
 
 | Modelo                    | R²   | MSE                 | MAE                   | MAPE   | RMSPE |
 |---------------------------|------|---------------------|-----------------------|--------|-------|
-| Polynomial Regression     | 0.856 | 7,426,317,142.71    | 64,388.44             | 0.162  | 0.039 |
-| Multi Linear Regression   | 0.860 | 7,327,966,323.42    | 64,058.30             | 0.161  | 0.043 |
-| Decision Tree             | 0.617 | 22,341,980,635.17   | 95,334.10             | 0.250  | 0.124 |
+| Ridge Regression           | 0.789 | 12,884,054,099.78   | 87,069.25             | 0.199  | 0.052 |
+| Polynomial Regression      | 0.789 | 12,884,054,099.78   | 87,069.25             | 0.199  | 0.052 |
+| Multi Linear Regression    | 0.786 | 13,069,612,291.80   | 87,649.85             | 0.200  | 0.052 |
+| Decision Tree              | 0.592 | 24,967,098,916.85   | 107,187.45            | 0.248  | 0.055 |
+| CatBoost Regressor         | 0.866 | 8,205,694,862.16    | 63,408.75             | 0.145  | 0.037 |
+| XGBoost Regressor          | 0.847 | 9,529,034,273.81    | 73,203.43             | 0.183  | 0.071 |
 
 ## Visualização dos Resultados
 
@@ -151,32 +155,37 @@ Em construção
 Com base nos resultados apresentados:
 
 - **Melhor Desempenho Geral:**
-  - **Com Amenities:** A **Multi Linear Regression** apresenta o melhor desempenho geral com o maior \( R^2 \) e os menores valores de MAE, MAPE e RMSPE, indicando que o modelo ajustado com amenities é mais preciso e explica melhor a variabilidade dos dados.
-  - **Sem Amenities:** O **CatBoost Regressor** mostra o melhor desempenho, com o maior \( R^2 \) e os menores MAE e RMSPE.
+  - **Com Amenities:** O **CatBoost Regressor** apresenta o melhor desempenho geral com o maior \( R^2 \) (0.866), o menor MAE (63,408.75), MAPE (0.145) e RMSPE (0.037), indicando que o modelo otimizado com amenities é mais preciso e explica melhor a variabilidade dos dados.
+  - **Sem Amenities:** O **CatBoost Regressor** também se destaca, com o maior \( R^2 \) (0.861), além de apresentar os menores valores de MAE (67,306.37), MAPE (0.160) e RMSPE (0.042).
 
 - **Modelos com Pior Desempenho:**
-  - **Sem Amenities:** O **Decision Tree** tem o menor \( R^2 \) e os maiores valores de MAE e MAPE, indicando que este modelo é menos eficaz comparado aos outros.
-  - **Com Amenities:** O **Decision Tree** continua a ter o menor \( R^2 \), mas a inclusão de amenities melhorou o desempenho geral em comparação com o modelo sem amenities.
+  - **Sem Amenities:** O **Decision Tree** tem o pior desempenho com o menor \( R^2 \) (0.732), além de apresentar MAE e MAPE relativamente altos, sugerindo que é menos eficaz.
+  - **Com Amenities:** O **Decision Tree** continua a ter o pior desempenho, com o menor \( R^2 \) (0.592) e os maiores valores de MAE (107,187.45) e MAPE (0.248), apesar da inclusão de amenities.
 
-Esses resultados sugerem que a inclusão de amenities melhora o desempenho dos modelos, especialmente em termos de \( R^2 \) e erros percentuais.
+Esses resultados sugerem que a inclusão de amenities melhora o desempenho dos modelos, principalmente em termos de MAE, MAPE e RMSPE, além de reduzir a variabilidade dos erros nos modelos mais avançados.
 
-
-
+---
 
 ## Conclusão
 
-Baseado nas métricas de erro (MSE, MAPE e RMSPE), o modelo que apresentou os melhores resultados foi o **Polynomial Regression com amenities**, com o menor MSE, MAPE e RMSPE. O **CatBoost Regressor** também se destacou entre os modelos sem amenities, especialmente pela sua performance superior em termos de MSE e MAPE.
+Baseado nas métricas de erro (MAE, MAPE e RMSPE), o modelo que apresentou os melhores resultados foi o **CatBoost Regressor** tanto com quanto sem amenities. Esse modelo teve o menor MAE, MAPE e RMSPE em ambas as configurações, confirmando sua superioridade na precisão das predições.
+
+Entre os modelos com amenities, o **CatBoost Regressor** é o mais eficaz, com o menor erro absoluto e percentual, sugerindo que é o mais adequado para capturar a relação entre as variáveis preditoras e o target. Para os modelos sem amenities, o **CatBoost Regressor** também supera os demais.
 
 ## Próximos Passos
-- Testar mais técnicas de regularização para evitar overfitting.
-- Explorar redes neurais para realizar a predição.
-- Melhorar a manipulação de outliers no conjunto de dados.
 
-## Próximos Passos
-- Testar mais técnicas de regularização para evitar overfitting.
-- Explorar redes neurais para realizar a predição.
-- Melhorar a manipulação de outliers no conjunto de dados.
+- **Refinamento dos Modelos:**
+  - Explorar ajustes adicionais nos hiperparâmetros do **CatBoost** e do **XGBoost** para potencialmente melhorar ainda mais o desempenho.
+  - Investigar técnicas de regularização em modelos lineares para evitar overfitting em datasets maiores.
 
+- **Exploração de Modelos Alternativos:**
+  - Testar redes neurais, que podem ser particularmente eficazes ao capturar interações complexas entre as variáveis.
+  
+- **Tratamento de Outliers:**
+  - Melhorar a identificação e remoção de outliers, que podem estar influenciando os resultados dos modelos de regressão.
+
+- **Análise dos Atributos:**
+  - Avaliar mais profundamente o impacto de diferentes amenities sobre o modelo, possivelmente através de feature importance ou SHAP values, para identificar quais características têm maior influência nas predições.
 ## Contato
 
 Para mais informações, entre em contato: shibukawa@alunos.utfpr.edu.br
